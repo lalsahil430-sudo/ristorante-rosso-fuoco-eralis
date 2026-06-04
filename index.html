@@ -596,7 +596,7 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 3rem 2rem 2rem
 
       <button class="mtab" onclick="showTab('t-speciale',this)" data-k="tab_spec">Menu Speciali</button>
 
-      <button class="mtab" onclick="showTab('t-estivo',this)">Menù Estivo</button>
+      <button class="mtab" onclick="showTab('t-estivo',this)" data-k="tab_estivo">Menù Estivo</button>
 
     </div>
 
@@ -1080,7 +1080,7 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 3rem 2rem 2rem
 
   <div class="menu-cat">
 
-    <div class="menu-cat-hd">Menù Estivo</div>
+    <div class="menu-cat-hd" data-k="cat_estivo">Menù Estivo</div>
 
     <div class="menu-grid">
 
@@ -1088,7 +1088,7 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 3rem 2rem 2rem
 
       <div class="menu-row"><div><div class="menu-name">Pizza Boccacia</div><div class="menu-desc">Prosciutto, rucola, bianca</div></div><div class="menu-price">&#8364;8,00</div></div>
 
-      <div class="menu-row"><div><div class="menu-name">Hawaiian Pizza</div><div class="menu-desc"></div></div><div class="menu-price">&#8364;10,00</div></div>
+      <div class="menu-row"><div><div class="menu-name">Hawaiian Pizza</div></div><div class="menu-price">&#8364;10,00</div></div>
 
       <div class="menu-row"><div><div class="menu-name">Pizza Spinaci e Ricotta</div></div><div class="menu-price">&#8364;10,00</div></div>
 
@@ -1262,11 +1262,10 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 3rem 2rem 2rem
 
       <div class="booking-widget-wrap">
 
-        <!-- resOS Booking widget v3 script START -->
+        <!-- Direct booking button – resOS blocks iframe embedding via X-Frame-Options -->
+        <a href="https://ristorante-rosso-fuoco-eralis.resos.com/booking" target="_blank" rel="noopener noreferrer" class="resos-booking-widget" data-k="book_btn">Prenota ora</a>
 
-        <a class="resos-booking-widget" href="https://ristorante-rosso-fuoco-eralis.resos.com/booking" target="_blank" rel="noopener" data-lang="en" data-restaurant-id="nHeGhL7cpXvuWiD7v" data-domain="http://ristorante-rosso-fuoco-eralis.resos.com/">Book a table</a><div id="resos-booking-script-3" style="text-align:center;opacity:0.6;font-size:70%;margin-top:10px;"><a target="_blank" rel="noopener" href="https://resos.com/?utm_source=restaurantsite&utm_medium=bookingwidget">Restaurant booking system by resOS</a></div><script type="text/javascript">(function() {const scr=document.createElement("script");scr.src="https://ristorante-rosso-fuoco-eralis.resos.com/embed/booking/widget.js?ts="+new Date().getTime();document.getElementById("resos-booking-script-3").appendChild(scr);})()</script>
-
-        <!-- resOS Booking widget v3 script END -->
+        <small style="margin-top:1rem;"><a target="_blank" rel="noopener" href="https://resos.com/?utm_source=restaurantsite&utm_medium=bookingwidget" style="color:var(--grey);font-size:0.7rem;">Restaurant booking system by resOS</a></small>
 
       </div>
 
@@ -1402,7 +1401,8 @@ var T = {
 
     menu_eyebrow:"Da Gustare",menu_title:"Il Nostro <em>Menu</em>",
 
-    tab_pizza:"Pizza",tab_ita:"Cucina Italiana",tab_cn:"Cucina Cinese",tab_pranzo:"Menu Pranzo",tab_spec:"Menu Speciali",
+    tab_pizza:"Pizza",tab_ita:"Cucina Italiana",tab_cn:"Cucina Cinese",tab_pranzo:"Menu Pranzo",tab_spec:"Menu Speciali",tab_estivo:"Menù Estivo",
+    cat_estivo:"Menù Estivo",
 
     cat_rossa:"Pizza Rossa",cat_bianca:"Pizza Bianca",cat_calzoni:"Calzoni",cat_spec:"Pizza Speciale",
 
@@ -1435,6 +1435,8 @@ var T = {
     book_eyebrow:"Riserva il Tuo Posto",book_title:"Prenota un <em>Tavolo</em>",
 
     book_desc:"Assicurati il tuo tavolo da Rosso Fuoco. Siamo aperti ogni giorno dalle 11:00 a mezzanotte. Per grandi gruppi o eventi speciali contattateci per telefono.",
+
+    book_btn:"Prenota ora",
 
     info_eyebrow:"Vieni a Trovarci",info_title:"Contatti e Orari",
 
@@ -1478,7 +1480,8 @@ var T = {
 
     menu_eyebrow:"A Deguster",menu_title:"Notre <em>Menu</em>",
 
-    tab_pizza:"Pizza",tab_ita:"Cuisine Italienne",tab_cn:"Cuisine Chinoise",tab_pranzo:"Menu Dejeuner",tab_spec:"Menus Speciaux",
+    tab_pizza:"Pizza",tab_ita:"Cuisine Italienne",tab_cn:"Cuisine Chinoise",tab_pranzo:"Menu Dejeuner",tab_spec:"Menus Speciaux",tab_estivo:"Menu Estival",
+    cat_estivo:"Menu Estival",
 
     cat_rossa:"Pizza Rouge",cat_bianca:"Pizza Blanche",cat_calzoni:"Calzoni",cat_spec:"Pizza Speciale",
 
@@ -1511,6 +1514,8 @@ var T = {
     book_eyebrow:"Reservez Votre Place",book_title:"Reserver une <em>Table</em>",
 
     book_desc:"Assurez votre table chez Rosso Fuoco. Nous sommes ouverts tous les jours de 11h a minuit.",
+
+    book_btn:"Réserver maintenant",
 
     info_eyebrow:"Venez Nous Voir",info_title:"Contact et Horaires",
 
@@ -1554,7 +1559,8 @@ var T = {
 
     menu_eyebrow:"To Enjoy",menu_title:"Our <em>Menu</em>",
 
-    tab_pizza:"Pizza",tab_ita:"Italian Cuisine",tab_cn:"Chinese Cuisine",tab_pranzo:"Lunch Menu",tab_spec:"Special Menus",
+    tab_pizza:"Pizza",tab_ita:"Italian Cuisine",tab_cn:"Chinese Cuisine",tab_pranzo:"Lunch Menu",tab_spec:"Special Menus",tab_estivo:"Summer Menu",
+    cat_estivo:"Summer Menu",
 
     cat_rossa:"Red Pizza",cat_bianca:"White Pizza",cat_calzoni:"Calzoni",cat_spec:"Special Pizza",
 
@@ -1587,6 +1593,8 @@ var T = {
     book_eyebrow:"Reserve Your Spot",book_title:"Book a <em>Table</em>",
 
     book_desc:"Secure your table at Rosso Fuoco. We are open every day from 11:00 AM to midnight. For large groups or special events contact us by phone.",
+
+    book_btn:"Book now",
 
     info_eyebrow:"Come and Find Us",info_title:"Contact and Hours",
 
@@ -1630,7 +1638,8 @@ var T = {
 
     menu_eyebrow:"美食享受",menu_title:"我们的<em>菜单</em>",
 
-    tab_pizza:"披萨",tab_ita:"意大利菜",tab_cn:"中国菜",tab_pranzo:"午餐套餐",tab_spec:"特别菜单",
+    tab_pizza:"披萨",tab_ita:"意大利菜",tab_cn:"中国菜",tab_pranzo:"午餐套餐",tab_spec:"特别菜单",tab_estivo:"夏季菜单",
+    cat_estivo:"夏季菜单",
 
     cat_rossa:"红酱披萨",cat_bianca:"白酱披萨",cat_calzoni:"卡尔佐内",cat_spec:"特色披萨",
 
@@ -1663,6 +1672,8 @@ var T = {
     book_eyebrow:"预留您的座位",book_title:"预订<em>餐桌</em>",
 
     book_desc:"在 Rosso Fuoco 确保您的餐桌。我们每天 11:00 至午夜开放。",
+
+    book_btn:"立即预订",
 
     info_eyebrow:"来找我们",info_title:"联系方式与营业时间",
 
